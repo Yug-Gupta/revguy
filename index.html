@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Yug Gupta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <style>
+        /* Catppuccin color palette */
+        :root {
+            --background: #1E1E28;
+            --foreground: #D9E0EE;
+            --primary: #F5C2E7;
+            --secondary: #8CAAEE;
+            --highlight: #FAB387;
+            --accent: #A6E3A1;
+        }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    padding: 20px;
+    border: 2px solid var(--primary); /* This adds a thin border around the page */
+    max-width: 1200px; /* Sets a max width for the content */
+    margin: 20px auto; /* Centers the content horizontally */
+    border-radius: 12px; /* Slightly rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-color: var(--background);
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: var(--primary);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background-color: var(--background);
+            color: var(--foreground);
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Button styles for projects or other links */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--highlight);
+            color: var(--background);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>A reversed guY</h1>
+            <p>Nothing much here, just a collection of photos.</p>
+            <a href="gallery.html" class="btn">See Gallery</a>
+        </div>
+    </header>
+
+    <footer>
+        <p>&copy; 2024 Yug Gupta</p>
+    </footer>
+
+</body>
+</html>
