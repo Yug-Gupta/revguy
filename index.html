@@ -3,83 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Yug Gupta</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <style>
-        /* Catppuccin color palette */
         :root {
-            --background: #1E1E28;
-            --foreground: #D9E0EE;
-            --primary: #F5C2E7;
-            --secondary: #8CAAEE;
-            --highlight: #FAB387;
-            --accent: #A6E3A1;
-        }
+                    --background: #1E1E28;
+                    --foreground: #D9E0EE;
+                    --primary: #F5C2E7;
+                    --secondary: #8CAAEE;
+                    --highlight: #FAB387;
+                    --accent: #A6E3A1;
+                }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background);
-    color: var(--foreground);
-    margin: 0;
-    padding: 20px;
-    border: 2px solid var(--primary); /* This adds a thin border around the page */
-    max-width: 1200px; /* Sets a max width for the content */
-    margin: 20px auto; /* Centers the content horizontally */
-    border-radius: 12px; /* Slightly rounded corners for a modern look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
-}
-
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
+        body {
+            font-family: 'Poppins', sans-serif;
             background-color: var(--background);
-        }
-
-        h1 {
-            font-size: 4rem;
-            color: var(--primary);
+            color: var(--foreground);
             margin: 0;
-            font-weight: 600;
+            padding: 20px;
+            border: 2px solid var(--primary);
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        p {
-            color: var(--secondary);
-            font-size: 1.2rem;
+        /* Header section with centered elements */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
         }
 
-        /* Button styles for projects or other links */
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: var(--primary);
+        }
+
+        /* Adjust the image */
+        .header img {
+            width: 120px;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        /* ASCII Art styling */
+        .ascii-art {
+            font-family: monospace;
+            font-size: 1em;
+            color: white;
+            white-space: pre-wrap; /* Keeps ASCII art formatting */
+        }
+
+        /* Style for the button */
         .btn {
             display: inline-block;
-            margin-top: 20px;
             padding: 10px 20px;
-            background-color: var(--highlight);
-            color: var(--background);
-            text-decoration: none;
-            border-radius: 5px;
+            font-size: 1.2em;
             font-weight: 600;
+            color: var(--background);
+            background-color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         .btn:hover {
-            background-color: var(--accent);
+            background-color: var(--highlight);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em; /* Smaller font for mobile */
+            }
+
+            .header img {
+                width: 100px; /* Scale down on mobile */
+            }
+
+            .btn {
+                font-size: 1.1em; /* Slightly smaller button on mobile */
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div>
-            <h1>A reversed guY</h1>
-            <p>Nothing much here, just a collection of photos.</p>
-            <a href="gallery.html" class="btn">See Gallery</a>
-        </div>
-    </header>
+    <!-- Header section -->
+    <div class="header">
+        <h1>A Reversed guY</h1>
+        <h3>just a bunch of pictures</h3>
+    </div>
+
+    <!-- ASCII Art section -->
+    <div class="ascii-art">
+        <pre>
+  -. -. `.  / .-' _.'  _
+     .--`. `. `| / __.-- _' `
+    '.-.  \  \ |  /   _.' `_
+    .-. \  `  || |  .' _.-' `.
+  .' _ \ '  -    -'  - ` _.-.
+   .' `. %%%%%   | %%%%% _.-.`-
+ .' .-. ><(@)> ) ( <(@)>< .-.`.
+   (("`(   -   | |   -   )'"))
+  / \\#)\    (.(_).)    /(#//\
+ ' / ) ((  /   | |   \  )) (`.`.
+ .'  (.) \ .md88o88bm. / (.) \)
+   / /| / \ `Y88888Y' / \ | \ \
+   .' / O  / `.   -   .' \  O \ \\
+    / /(O)/ /| `.___.' | \\(O) \
+      / / / / |  |   |  |\  \  \ \
+       / / // /|  |   |  |  \  \ \  
+    _.--/--/'( ) ) ( ) ) )`\-\-\-._
+  ( ( ( ) ( ) ) ( ) ) ( ) ) ) ( ) )
+        </pre>
+        <!-- You can replace this with any ASCII art you'd like -->
+    </div>
+
+    <!-- Button linking to gallery -->
+    <a href="gallery.html" class="btn">See Gallery</a>
 
 </body>
 </html>
