@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Log</title>
+  <style>
+    body {
+      background-color: #1b1425;
+      color: #e0e0e0;
+    }
+    #movie-log {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: left;
+      color: #f0b7b9;
+    }
+    /* Color hints for categories */
+    #color-hints {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .hint {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 0 10px;
+      border-radius: 50%;
+    }
+    .animated { background-color: #eb6f92; } /* Color for Animated */
+    .bollywood { background-color: #f6c177; } /* Color for Bollywood */
+    .hollywood { background-color: #31748f; } /* Color for Hollywood */
+
+    /* Movie list styling */
+    #movie-list {
+      text-align: left;
+    }
+    .movie-item {
+      display: flex;
+      align-items: center;
+      font-size: 1.1em;
+      margin: 8px 0;
+    }
+    .movie-item img {
+      width: 60px; /* Adjusted width for better visibility */
+      height: 90px; /* Adjusted height for better visibility */
+      margin-right: 15px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<div id="movie-log">
+  <h1>~ Movie Log ~</h1>
+  <!-- Color hints for categories -->
+  <div id="color-hints">
+    <div class="hint animated" title="Animated"></div>
+    <div class="hint bollywood" title="Bollywood"></div>
+    <div class="hint hollywood" title="Hollywood"></div>
+  </div>
+
+  <!-- Movie list container -->
+  <div id="movie-list"></div>
+</div>
+
+<script>
+  // Movie data arrays with poster URLs
+  const animated = [
+      {title: "Kiki's Delivery Service (1989)", poster: "https://encrypted-tbn0.gstatic.com/posters?q=tbn:ANd9GcSv9IqGnoA586YK_S-wwbJy4ypxktoS2Q2v1A&s"},
+      {title: "Up (2009)", poster: "https://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg"},
+      {title: "Turbo (2013)", poster: "https://lumiere-a.akamaihd.net/v1/images/turbo_584x800_2dfab851.jpeg?region=0%2C0%2C584%2C800"},
+      {title: "Ratatouille (2007)", poster: "https://resizing.flixster.com/ySiX7RlyKRuuxCcAI7SgdkMAZ0U=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc4ZmJhZjZiLTEzNWMtNDIwOC1hYzU1LTgwZjE3ZjQzNTdiNy5qcGc="},
+      {title: "Coco (2017)", poster: "https://upload.wikimedia.org/wikipedia/en/9/98/Coco_%282017_film%29_poster.jpg"},
+      {title: "Wall-E (2008)", poster: "https://upload.wikimedia.org/wikipedia/en/4/4c/WALL-E_poster.jpg"},
+      {title: "Inside Out (2015)", poster: "https://lumiere-a.akamaihd.net/v1/images/p_insideout_19751_af12286c.jpeg?region=0%2C0%2C540%2C810"},
+      {title: "Inside Out 2 (2024)", poster: "https://m.media-amazon.com/images/I/81OxUOV+7qL._AC_UF1000,1000_QL80_.jpg"},
+      {title: "Ralph Breaks the Internet (2018)", poster: "https://encrypted-tbn0.gstatic.com/posters?q=tbn:ANd9GcR7QwIfk3VpEMKo1oqjY-ojSLeHXvC_fhZDXg&s"},
+      {title: "Spirited Away (2001)", poster: "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png"}           
+  ];
+  
+  const bollywood = [
+     {title: "3 Idiots (2009)", poster: "https://upload.wikimedia.org/wikipedia/en/d/df/3_idiots_poster.jpg"},
+     {title: "Andaz Apna Apna (1994)", poster: "https://m.media-amazon.com/images/S/pv-target-images/816f6eaa6b86fec1eac39f8596cde720d9534ec16208bb6112638f735dfe178f.jpg"},
+     {title: "Zindagi Na Milegi Dobara (2011)", poster: "https://upload.wikimedia.org/wikipedia/en/1/17/Zindagi_Na_Milegi_Dobara.jpg"}
+  ];
+  
+  const hollywood = [
+     {title: "Shutter Island (2010)", poster: "https://www.justwatch.com/images/poster/254274473/s718/shutter-island.jpg"},
+     {title: "Inception (2010)", poster: "https://flhsnavigator.com/wp-content/uploads/2021/10/url-4.jpeg?w=810"},
+     {title: "Interstellar (2014)", poster: "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"},
+     {title: "The Jungle Book (2016)", poster: "https://upload.wikimedia.org/wikipedia/en/a/a4/The_Jungle_Book_%282016%29.jpg"},
+     {title: "Aladdin (2019)", poster: "https://upload.wikimedia.org/wikipedia/en/9/9a/Aladdin_%28Official_2019_Film_Poster%29.png"}            
+  ];
+
+  // Combine all movies with category data
+  let movies = [
+    ...animated.map(movie => ({ ...movie, category: 'animated' })),
+    ...bollywood.map(movie => ({ ...movie, category: 'bollywood' })),
+    ...hollywood.map(movie => ({ ...movie, category: 'hollywood' }))
+  ];
+
+  // Sort movies alphabetically by title
+  movies.sort((a, b) => a.title.localeCompare(b.title));
+
+  // Category colors for titles
+  const categoryColors = {
+    animated: '#eb6f92',  // Color for Animated
+    bollywood: '#f6c177', // Color for Bollywood
+    hollywood: '#31748f'  // Color for Hollywood
+  };
+
+  // Display sorted movies
+  const movieList = document.getElementById("movie-list");
+  movies.forEach(movie => {
+    const movieItem = document.createElement("div");
+    movieItem.className = "movie-item";
+
+    // Poster
+    const poster = document.createElement("img");
+    poster.src = movie.poster;
+    poster.alt = `${movie.title} Poster`;
+
+    // Movie title with category color
+    const title = document.createElement("span");
+    title.style.color = categoryColors[movie.category];
+    title.textContent = movie.title;
+
+    // Append poster and title to movie item
+    movieItem.appendChild(poster);
+    movieItem.appendChild(title);
+    movieList.appendChild(movieItem);
+  });
+</script>
+
+</body>
+</html>
+	
