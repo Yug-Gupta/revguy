@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>YUG/Fav Artists</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <style>
+        :root {
+            --background: #1b1425;
+            --foreground: #f0b7b9;
+            --primary: #f0b7b9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            margin: 0;
+            padding: 20px;
+            border: 2px solid var(--primary);
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .artist-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .artist {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 120px;
+        }
+
+        .artist img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%; /* Makes the image circular */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .artist img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
+        .artist-name {
+            margin-top: 10px;
+            color: var(--foreground);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>~ Fav Artists ~</h2>
+    <div class="artist-container">
+        <!-- Replace with your own artist images and names -->
+        <div class="artist">
+            <img src="https://static01.nyt.com/images/2021/02/23/arts/22daftpunk/merlin_68436082_cbc2d16f-e4ce-4e8e-9f06-d2789c9f309b-superJumbo.jpg" alt="Daft Punk">
+            <div class="artist-name">Daft Punk</div>
+        </div>
+        <div class="artist">
+            <img src="https://i.scdn.co/image/ab67616100005174124eba6bf3476404531bd7b2" alt="ABBA">
+            <div class="artist-name">ABBA</div>
+        </div>
+        <div class="artist">
+            <img src="https://i.scdn.co/image/ab6761610000e5ebb99cacf8acd5378206767261" alt="Lana Del Rey">
+            <div class="artist-name">Lana Del Rey</div>
+        </div>
+        <div class="artist">
+            <img src="https://yt3.googleusercontent.com/c_Aj0LBItvCDskQgXz_mH58CgQsqHY48iWvYwViH7wQn5x3W9TIusmpoiLUF4M0zR10ly8gjTA=s900-c-k-c0x00ffffff-no-rj" alt="Tame Impala">
+            <div class="artist-name">Tame Impala</div>
+        </div>
+		<div class="artist">
+            <img src="https://media.pitchfork.com/photos/637b954eec1f9923d6b20442/1:1/w_2000,h_2000,c_limit/The-xx.jpg" alt="The xx">
+            <div class="artist-name">The xx</div>
+        </div>
+		<div class="artist">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2MbUBbc-b41muLF09d-1k3r8DzD-An1IbkQ&s" alt="Stromae">
+            <div class="artist-name">Stromae</div>
+        </div>
+		<div class="artist">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRybX7zrsnAlf742--hQtQHZsaII0qDN2cUbA&s" alt="iNi Kamoze">
+            <div class="artist-name">iNi Kamoze</div>
+        </div>
+		<div class="artist">
+            <img src="https://i.scdn.co/image/ab6761610000e5eb256d85bb42b212a4a20f1804" alt="R.A. The Rugged Man">
+            <div class="artist-name">R.A. The Rugged Man</div>
+        </div>
+		<div class="artist">
+            <img src="https://imageio.forbes.com/specials-images/imageserve/5ed554fab14861000600baf1/0x0.jpg?format=jpg&crop=686,686,x53,y114,safe&height=416&width=416&fit=bounds" alt="JAY-Z">
+            <div class="artist-name">JAY-Z</div>
+        </div>
+		<div class="artist">
+            <img src="https://images.genius.com/9118a64d842f1611d83f5090989a3475.788x788x1.jpg" alt="2Pac">
+            <div class="artist-name">2Pac</div>
+        </div>
+		<div class="artist">
+            <img src="https://www.usatoday.com/gcdn/presto/2023/05/09/USAT/aea20772-8856-4ffd-9e9a-b6ee5299e756-50_Cent_Press_Photo_1.jpeg?crop=1823,1026,x0,y0&width=1823&height=1026&format=pjpg&auto=webp" alt="50 Cent">
+            <div class="artist-name">50 Cent</div>
+        </div>
+		<div class="artist">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/j_cole_photo_by_isaac_brekken_wireimage_getty_503069628.jpg?crop=1xw:1.0xh;center,top&resize=640:*" alt="J. Cole">
+            <div class="artist-name">J. Cole</div>
+        </div>        
+        <!-- Add more artists as needed -->
+    </div>
+
+</body>
+</html>

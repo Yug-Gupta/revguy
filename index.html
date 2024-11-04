@@ -41,6 +41,7 @@
                 
         .button-container {
             display: flex;
+            flex-wrap: wrap; /* Allows buttons to wrap to the next line */
             justify-content: center;
             gap: 15px;
             margin-top: 20px;
@@ -65,11 +66,11 @@
             color: var(--background);
         }
 
-		img {
-            border-radius: 15px; /* Adjust corner radius as needed */
-            display: block; /* Removes extra space below the image */
-			width: 25%;
-			margin-left: 37.5%;
+        img {
+            border-radius: 15px;
+            display: block;
+            width: 25%;
+            margin-left: 37.5%;
         }
         
     </style>
@@ -77,11 +78,12 @@
 <body>
 
     <h2>[A REVERSED GUY]</h2>
-	<h3>~ Step into my online haven ~</h3>
-	<img src = chafa.gif alt = "GIF"></img>	
+    <h3>~ Step into my online haven ~</h3>
+    <img src="chafa.gif" alt="GIF"></img>
     <div class="button-container">
         <a href="gallery.html" class="button">My Gallery</a>
         <a href="movielog.html" class="button">My Movie Log</a>
+        <a href="favartists.html" class="button">Fav Artists</a>
     </div>
 
 </body>
