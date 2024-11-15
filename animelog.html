@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>YUG/Anime Log</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <style>
+        :root {
+            --background: #1b1425;
+            --foreground: #f0b7b9;
+            --primary: #f0b7b9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            margin: 0;
+            padding: 20px;
+            border: 2px solid var(--primary);
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .anime-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .anime {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 120px;
+        }
+
+        .anime img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 20%; /* Makes the image a rounded square */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .anime img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
+        .anime-title {
+            margin-top: 10px;
+            color: var(--foreground);
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .anime {
+                width: 100px;
+            }
+
+            .anime img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>~ Anime Log ~</h2>
+    <div class="anime-container">
+        <!-- Replace with your own anime images and titles -->
+        <div class="anime">
+            <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx19-8Iz8KB1pJNil.jpg" alt="Monster">
+            <div class="anime-title">Monster</div>
+        </div>
+        <div class="anime">
+            <img src="https://i1.sndcdn.com/artworks-000155939347-inrnpi-t500x500.jpg" alt="Erased">
+            <div class="anime-title">Boku dake ga Inai Machi</div>
+        </div>
+        <div class="anime">
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/6f/Death_Note_Vol_1.jpg" alt="Death Note">
+            <div class="anime-title">Death Note</div>
+        </div>
+        <div class="anime">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Deathparadevisual.jpg/220px-Deathparadevisual.jpg" alt="Death Parade">
+            <div class="anime-title">Death Parade</div>
+        </div>
+        <div class="anime">
+            <img src="https://m.media-amazon.com/images/M/MV5BMDg3MGVhNWUtYTQ2NS00ZDdiLTg5MTMtZmM5MjUzN2IxN2I4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="COTE">
+            <div class="anime-title">Classroom of the Elite</div>
+        </div>
+        <div class="anime">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/4d/Pluto_%282023%29.png" alt="Pluto">
+            <div class="anime-title">Pluto</div>
+        </div>
+        <div class="anime">
+            <img src="https://m.media-amazon.com/images/M/MV5BYjM1Yjk4NjYtM2I2Yi00MDFmLThmNGMtNTI2ZWYzOTM3MWFjXkEyXkFqcGc@._V1_.jpg" alt="Tomodachi Game">
+            <div class="anime-title">Tomodachi Game</div>
+        </div>
+        <div class="anime">
+            <img src="https://upload.wikimedia.org/wikipedia/en/e/e6/Terror_in_Resonance_Poster.jpg" alt="Zankyou no Terror">
+            <div class="anime-title">Zankyou no Terror</div>
+        </div>
+        <div class="anime">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Serial_Experiments_Lain_DVD_vol_1.jpg" alt="Serial Experiments Lain">
+            <div class="anime-title">Serial Experiments Lain</div>
+        </div>
+        <!-- Add more anime as needed -->
+    </div>
+
+</body>
+</html>
